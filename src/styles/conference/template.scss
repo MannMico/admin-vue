@@ -1,0 +1,148 @@
+/**
+ * 大会模板样式
+ */
+@import '../mixin.scss';
+@function doubleToPx ($px) {
+  @return $px / 2;
+}
+%box-sizing {
+  box-sizing: border-box;
+}
+::-webkit-input-placeholder {
+  color: #fff;
+}
+:-moz-placeholder {
+  color: #fff;
+}
+::-moz-placeholder {
+  color: #fff;
+}
+:-ms-input-placeholder {
+  color: #fff;
+}
+// 重置走马灯样式为 点
+.el-carousel__indicator {
+  padding: 0 5px;
+}
+.el-carousel__button {
+  @include base(doubleToPx(10px), doubleToPx(10px));
+  border-radius: 50%;
+}
+.template-box {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+}
+.index-inner {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+}
+.template-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  @include h-title(16px, #333, 40px);
+  border-bottom: 1px solid #ccc;
+  i {
+    @extend %cp;
+  }
+}
+.tips-info {
+  position: absolute;
+  top: 30px;
+  left: -80px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #f00;
+}
+// 实时预览样式
+.template-preview {
+  @include base(doubleToPx(750px), doubleToPx(1334px-40px-88px), #000);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  @extend %box-sizing;
+  overflow: hidden;
+}
+.template_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: doubleToPx(50px);
+  height: doubleToPx(40px);
+  @include fontStyle(doubleToPx(30px), #fff, doubleToPx(30px));
+  i {
+    margin-right: doubleToPx(40px);
+    font-size: doubleToPx(40px);
+  }
+}
+.header_left {
+  display: flex;
+  align-items: center;
+  height: doubleToPx(40px);
+}
+.template_logo {
+  @extend %ib;
+  margin-left: doubleToPx(35px);
+  @include base(doubleToPx(135px), doubleToPx(40px));
+}
+.nav_name {
+  margin-left: doubleToPx(30px);
+}
+.template_countdown {
+  margin-top: doubleToPx(65px);
+  @include fontStyle(doubleToPx(34px), #c5c5c5, doubleToPx(48px), center);
+  /* .day {
+    font-size: doubleToPx(48px);
+    color: #fff;
+  } */
+}
+// 重新编辑
+.re-edit-wrap {
+  @extend %ib;
+  margin: 0 10px;
+  vertical-align: top;
+}
+.re-edit {
+  &.template-box {
+    @extend %ib;
+    .template-hide {
+      display: none;
+    }
+  }
+}
+// 用于没有预览模块的样式
+.template-preview.no-template {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+// 重新编辑 & 模板排序
+.re-edit-btns {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+.sort-input-box {
+  margin: 20px 0 10px;
+  label {
+    padding-right: 10px;
+    font-size: 14px;
+  }
+}
+.index-inner {
+  word-wrap: break-word;
+  word-break: break-all;
+  .icon-lkker-menu {
+    font-size: 24px;
+  }
+}
+// 错误提示的位置
+.index-inner /deep/ .el-form-item__error {
+  top: 24%;
+  left: auto;
+  right: -70px;
+}

@@ -1,0 +1,121 @@
+/**
+ * 全局样式
+ */
+@import './mixin.scss';
+
+$mainColor: #409EFF;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none
+}
+
+a {
+  text-decoration: none;
+  &:visited,
+  &:focus {
+    color: #3a8ee6;
+  }
+}
+
+/* 清除浮动 */
+.clearfix {
+  *zoom:1;/*IE/7/6*/
+  &:after {
+      content:"\200B"; 
+      display:block; 
+      height:0; 
+      clear:both; 
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.ib {
+  display: inline-block;
+}
+
+#app{
+  height: 100%;
+}
+
+.green {
+  color: #396;
+}
+.red {
+  color: #f00;
+}
+
+// 分页
+.pagination-box {
+  margin: 10px 0;
+  text-align: right;
+}
+
+// 下划线
+.link {
+  text-decoration: underline
+}
+
+/**
+  * 以下是重置饿了吗组件部分样式
+  */
+// 添加按钮
+.el-button.add-btn {
+  margin: 20px 0 10px;
+}
+
+// dialog样式
+.el-dialog__wrapper.dialog-box {
+  .el-dialog__header {
+    padding: 14px 20px;
+    background: $mainColor;
+  }
+  .el-dialog__title {
+    color: #fff;
+  }
+  .el-dialog__headerbtn {
+    top: 20px;
+  }
+  .el-dialog__close {
+    color: #fff;
+  }
+}
+
+// 展开
+.unfold {
+  margin-left: 40px;
+  .el-icon-d-arrow-left {
+    transform: rotate(-90deg);
+  }
+}
+// 收起
+.fold {
+  margin-left: 40px;
+  .el-icon-d-arrow-left {
+    transform: rotate(90deg);
+  }
+}

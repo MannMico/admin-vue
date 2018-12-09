@@ -1,0 +1,75 @@
+
+// ? 为了去除input的阴影
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+// base layout
+@mixin base($width, $height, $bg:1) {
+  width: $width;
+  height: $height;
+  @if $bg != 1 {
+      background: $bg;
+  }
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  @include base(6px, 6px, transparent);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #8899a7;
+  border-radius: 4px;
+}
+
+// 主要用于标题 h1-h6
+@mixin h-title($fsize: 14px, $fcolor: #fff, $lh:1, $pos:left, $fweight: 400) {
+  @include fontStyle($fsize, $fcolor, $lh, $pos);
+  font-weight: $fweight;
+}
+
+// 字体 (大小、 颜色、 行高、 位置)
+@mixin fontStyle($fsize: 14px, $fcolor: #fff, $height:1, $pos:left) {
+  font-size: $fsize;
+  color: $fcolor;
+  line-height: $height;
+  text-align: $pos;
+}
+
+%ab-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+%clearfix {
+  overflow:hidden;
+  _zoom:1;
+}
+%fr {
+  float: right;
+}
+%fl {
+  float: left;
+}
+%show {
+  display: block;
+}
+%hide {
+  display: none;
+}
+%pr {
+  position: relative;
+}
+%pa {
+  position: absolute;
+}
+%ib {
+  display: inline-block;
+}
+%tc {
+  text-align: center;
+}
+%cp {
+  cursor: pointer;
+}
